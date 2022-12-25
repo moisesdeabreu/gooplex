@@ -4,6 +4,8 @@ import user from './assets/user.svg';
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 
+var serverURL = "https://gooplex.onrender.com/";
+
 let loadInterval;
 
 function loader(element) {
@@ -76,7 +78,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
 // fetch data
-const response = await fetch('http://localhost:5000',{
+const response = await fetch(serverURL,{
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
